@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meru University</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="title">
+      <h1>MERU UNIVERSITY OF SCIENCE AND TECHNOLOGY</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showSection('home')">Home</a></li>
+        <li><a href="#" onclick="showSection('about')">About Us</a></li>
+        <li><a href="#" onclick="showSection('courses')">Courses</a></li>
+        <li><a href="#" onclick="showSection('seminars')">Seminars</a></li>
+        <li><a href="#" onclick="showSection('contact')">Contact Us</a></li>
+        <li><a href="#" onclick="toggleAuthForms()">Login/Register</a></li>
+        <li id="logoutLink" style="display: none;"><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="content-section">
+      <h2>Admissions</h2>
+      <p>a) Self Sponsored Students: Follow the application steps...</p>
+      <p>b) Government Sponsored Students: Download your admission letter...</p>
+      <p>Required Documents: Passport photo, ID, Academic certs etc.</p>
+      <p>Application Fees: Certificate – 500, Degree – 1000, etc.</p>
+    </section>
+
+    <section id="about" class="content-section">
+      <h2>About Us</h2>
+      <p>Meru University is dedicated to academic excellence and innovation.</p>
+    </section>
+
+    <section id="courses" class="content-section">
+      <h2>Our Courses</h2>
+      <ul>
+        <li>Accounting Technician Diploma</li>
+        <li>Bachelor of Business Administration</li>
+        <li>Bachelor of Clinical Medicine and Community Health</li>
+        <li>Bachelor of Commerce</li>
+        <li>Bachelor of Education Arts</li>
+        <li>Bachelor of Education Technology (Civil/Electrical/Mechanical)</li>
+        <li>Bachelor of Science Agricultural Education and Extension</li>
+      </ul>
+    </section>
+
+    <section id="seminars" class="content-section">
+      <h2>Seminars</h2>
+      <p>Stay tuned for upcoming educational seminars and workshops.</p>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2>Contact Us</h2>
+      <p>Address: P.O BOX 972-60200, MERU</p>
+      <p>Phone: 0745989411</p>
+    </section>
+
+    <section id="authSection">
+      <h2>Register</h2>
+      <form id="registerForm" onsubmit="return validateRegisterForm();">
+        <input type="text" placeholder="Full Name" id="fullName" required />
+        <input type="email" placeholder="Email" id="email" required />
+        <input type="tel" placeholder="Phone Number" id="phone" required />
+        <input type="password" placeholder="Password" id="password" required />
+        <button type="submit">Register</button>
+      </form>
+
+      <h2>Login</h2>
+      <form id="loginForm" onsubmit="return validateLoginForm();">
+        <input type="email" placeholder="Email" id="loginEmail" required />
+        <input type="password" placeholder="Password" id="loginPassword" required />
+        <button type="submit">Login</button>
+      </form>
+
+      <p><a href="#">Forgot your password? Click here to recover it.</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Meru University of Science and Technology. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
