@@ -1,64 +1,83 @@
-function toggleAuthForms() {
-    const authSection = document.getElementById("authSection");
-    authSection.style.display = authSection.style.display === "none" ? "block" : "none";
+body {
+    background-color: green;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
   }
   
-  function showSection(sectionId) {
-    const allSections = document.querySelectorAll(".content-section");
-    allSections.forEach(section => section.style.display = "none");
-  
-    const target = document.getElementById(sectionId);
-    if (target) target.style.display = "block";
+  header {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
   }
   
-  // Registration logic
-  function validateRegisterForm() {
-    const name = document.getElementById("fullName").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const password = document.getElementById("password").value.trim();
-  
-    if (!name || !email || !phone || !password) {
-      alert("Please fill in all fields.");
-      return false;
-    }
-  
-    const existingUser = localStorage.getItem(email);
-    if (existingUser) {
-      alert("This email is already registered.");
-      return false;
-    }
-  
-    localStorage.setItem(email, JSON.stringify({ name, email, phone, password }));
-    alert("Registration successful!");
-    return false;
+  .logo-img {
+    width: 50px; /* Adjust as per logo size */
+    height: auto;
   }
   
-  // Login logic
-  function validateLoginForm() {
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-  
-    const userData = localStorage.getItem(email);
-    if (!userData) {
-      alert("Email not registered.");
-      return false;
-    }
-  
-    const user = JSON.parse(userData);
-    if (user.password !== password) {
-      alert("Incorrect password.");
-      return false;
-    }
-  
-    alert("Login successful!");
-    document.getElementById("authSection").style.display = "none";
-    document.getElementById("logoutLink").style.display = "inline";
-    return false;
+  .title h1 {
+    margin: 0;
+    font-size: 18px;
   }
   
-  function logout() {
-    document.getElementById("authSection").style.display = "block";
-    document.getElementById("logoutLink").style.display = "none";
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  form input {
+    display: block;
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  footer {
+    background-color: black;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  #authSection {
+    display: none;
+  }
+  
+  .content-section {
+    display: none;
   }
   
